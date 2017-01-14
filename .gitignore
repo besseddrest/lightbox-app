@@ -1,13 +1,8 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
-rails/tripping/db/*.sqlite3
-rails/tripping/db/*.sqlite3-journal
-
-# Ignore all tempfiles.
+# Ignore tempfiles.
 !/log/.keep
-rails/tripping/tmp
 *.keep
 .idea
 node_modules
