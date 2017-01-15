@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+}
+
+.gallery {
+  flex: 0 0 400px;
+
+  &--image {
+    border: 2px solid grey;
+
+    &__active {
+      border-color: red;
+    }
+  }
+}
+
+.viewport {
+  display: inline-block;
+  border: 2px solid black;
+
+  &--image {
+    width: 100%;
+  }
+}
