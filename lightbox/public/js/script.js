@@ -84,15 +84,28 @@ class Gallery {
   }
 
   checkKey(e) {
-    const active = this.active;
+    let active = this.active;
     const photos = this.data.photoset.photo;
 
-    if (e.keyCode == 37 && active > 0) {
-      // if left arrow, set previous as active
-      Gallery.prototype.setActive(photos[active - 1], active - 1);
-    } else if (e.keyCode == 39 && active < (this.count - 1)) {
-      // if right arrow, set next as active
-      Gallery.prototype.setActive(photos[active + 1], active + 1);
+    switch (e.code) {
+      case 'ArrowLeft':
+        active -= 1;
+        break;
+      case 'ArrowRight':
+        active += 1;
+        break;
+      case 'ArrowUp':
+        active -= 5;
+        break;
+      case 'ArrowDown':
+        active += 5;
+        break;
+      default:
+        break;
+    }
+
+    if (active >= 0 && active <= (this.count - 1)) {
+      Gallery.prototype.setActive(photos[active], active);
     }
   }
 
