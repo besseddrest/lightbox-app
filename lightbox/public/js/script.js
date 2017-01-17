@@ -76,7 +76,7 @@ class Gallery {
       const thumb = new Thumb(photo, i);
     });
 
-    this.displayGallery();
+    setTimeout(this.displayGallery, 1000);
   }
 
   displayGallery() {
@@ -98,18 +98,27 @@ class Gallery {
     // updates key based on arrow key press
     let active = this.active;
     const photos = this.photos;
+    let arrow = e.code;
 
-    switch (e.code) {
+    // Keys are different in Safari
+    if (typeof arrow == 'undefined')
+      arrow = e.keyIdentifier;
+
+    switch (arrow) {
       case 'ArrowLeft':
+      case 'Left':
         active -= 1;
         break;
       case 'ArrowRight':
+      case 'Right':
         active += 1;
         break;
       case 'ArrowUp':
+      case 'Up':
         active -= 5;
         break;
       case 'ArrowDown':
+      case 'Down':
         active += 5;
         break;
       default:
