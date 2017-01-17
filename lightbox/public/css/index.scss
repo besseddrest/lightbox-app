@@ -1,24 +1,84 @@
+/*
+ * App styles
+ * uses BEMCSS Methodology: http://getbem.com/introduction/
+ */
+
+html, body {
+  font-family: Helvetica, sans-serif;
+  background: lightgrey;
+}
+
+.photoset--title {
+  margin: 10px 0;
+}
+
 .container {
   display: flex;
 }
 
 .gallery {
   flex: 0 0 400px;
+  opacity: 0;
+  transition: opacity 1s;
+
+  &__visible {
+    opacity: 1;
+  }
 
   &--image {
-    border: 2px solid grey;
+    margin: 0 2px;
+    position: relative;
+    opacity: .75;
+    transition: all .25s;
+    z-index: 0;
+
+    &:hover {
+      opacity: 1;
+    }
 
     &__active {
-      border-color: red;
+      opacity: 1;
+      transform: scale(1.2);
+      z-index: 2;
     }
   }
 }
 
 .viewport {
-  display: inline-block;
-  border: 2px solid black;
+  display:flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background: darkgrey;
+
+  &--placeholder {
+    font-size: 30px;
+    text-align: center;
+    color: lightgrey;
+    animation: fadein 1s;
+  }
 
   &--image {
-    width: 100%;
+    position:relative;
   }
+
+  &--photo {
+    width: 100%;
+    animation: fadein 1s;
+  }
+
+  &--photo-title-wrapper {
+    padding: 10px 10px;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  &--photo-title {
+    margin: 0;
+    color: white;
+  }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
