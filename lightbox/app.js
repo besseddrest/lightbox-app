@@ -4,7 +4,6 @@ var path = require('path'),
     ejs = require('ejs'),
     app = express();
 
-// look this up
 app.use(sassMiddleware({
   /* Options */
   src: path.join(__dirname, 'public', 'css'),
@@ -14,7 +13,6 @@ app.use(sassMiddleware({
   prefix:  '/css'
 }));
 
-app.use('/fonts', express.static(path.join(__dirname, '..', 'node_modules', 'font-awesome', 'fonts')));
 app.use('/node_modules', express.static(path.join(__dirname, '..', 'node_modules')));
 
 app.use(express.static(path.join(__dirname, 'public')));
