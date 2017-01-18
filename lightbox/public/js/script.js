@@ -17,7 +17,6 @@ class App {
     header.classList.add('header');
     title.classList.add('header--photoset-title');
     desc.classList.add('header--description');
-    desc.innerHTML = 'A lightbox application built with native Javascript & SASS.'
     header.appendChild(title);
     header.appendChild(desc);
     app.appendChild(header);
@@ -81,6 +80,9 @@ class Gallery {
     // render photoset title
     const photosetTitle = document.querySelector('.header--photoset-title');
     photosetTitle.innerHTML = this.data.photoset.title;
+
+    const desc = document.querySelector('.header--description');
+    desc.innerHTML = 'A lightbox application built with native Javascript & SASS.';
   }
 
   renderThumbs() {
@@ -113,9 +115,10 @@ class Gallery {
     // updates key based on arrow key press
     let active = this.active;
     const photos = this.photos;
+    // keys for FF, Chrome, IE
     let arrow = e.key;
 
-    // Keys are different in Safari
+    // keys for Safari
     if (typeof arrow == 'undefined')
       arrow = e.keyIdentifier;
 
