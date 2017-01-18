@@ -11,11 +11,15 @@
     "nodemon": "^1.11.0"
   },
   "scripts": {
-    "start": "./node_modules/nodemon/bin/nodemon.js ./lightbox/app.js"
+    "start": "./node_modules/nodemon/bin/nodemon.js ./lightbox/app.js",
+    "build": "babel lightbox/public/js -d build/js"
   },
   "keywords": [
     "javascript"
   ],
   "author": "Harold Cabalic",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.18.0"
+  }
 }

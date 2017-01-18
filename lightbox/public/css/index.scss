@@ -8,8 +8,23 @@ html, body {
   background: lightgrey;
 }
 
-.photoset--title {
-  margin: 10px 0;
+.app {
+  margin: 0 auto;
+  width: 95vw;
+}
+
+.header {
+  animation: fadein 1s;
+
+  &--photoset-title {
+    margin: 10px 0 0;
+    font-size: 34px;
+  }
+
+  &--description {
+    margin: 0 0 20px;
+    font-size: 14px;
+  }
 }
 
 .container {

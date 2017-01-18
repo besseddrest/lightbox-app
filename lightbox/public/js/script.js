@@ -6,12 +6,27 @@ class App {
   }
 
   renderElements() {
-    // create main DOM elements
-    const container = document.querySelector('.container'),
+    const app = document.querySelector('.app'),
+          header = document.createElement('header'),
+          title = document.createElement('h1'),
+          desc = document.createElement('p'),
+          container = document.createElement('section'),
           gallery = document.createElement('section');
 
+    // header elements
+    header.classList.add('header');
+    title.classList.add('header--photoset-title');
+    desc.classList.add('header--description');
+    desc.innerHTML = 'A lightbox application built with native Javascript & SASS.'
+    header.appendChild(title);
+    header.appendChild(desc);
+    app.appendChild(header);
+
+    // thumbnail gallery
+    container.classList.add('container');
     gallery.classList.add('gallery');
     container.appendChild(gallery);
+    app.appendChild(container);
   }
 
   getData() {
@@ -64,7 +79,7 @@ class Gallery {
 
   renderTitle() {
     // render photoset title
-    const photosetTitle = document.querySelector('.photoset--title');
+    const photosetTitle = document.querySelector('.header--photoset-title');
     photosetTitle.innerHTML = this.data.photoset.title;
   }
 
@@ -76,7 +91,7 @@ class Gallery {
       const thumb = new Thumb(photo, i);
     });
 
-    setTimeout(this.displayGallery, 1000);
+    setTimeout(this.displayGallery, 500);
   }
 
   displayGallery() {
