@@ -9,5 +9,5 @@ node_modules
 **/*.css
 **/.DS_Store
 
-#Ignore build files for prod
+# Ignore build files for prod
 build
