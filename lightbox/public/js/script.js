@@ -113,7 +113,7 @@ class Gallery {
     // updates key based on arrow key press
     let active = this.active;
     const photos = this.photos;
-    let arrow = e.code;
+    let arrow = e.key;
 
     // Keys are different in Safari
     if (typeof arrow == 'undefined')
