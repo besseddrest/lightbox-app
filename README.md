@@ -1,6 +1,8 @@
 # Lightbox Application
 A simple lightbox application using only native Javascript and Sass.
 
+[Click here to view the application.](http://besseddrest.com/lightbox/)
+
 This makes a Flickr API call to the `flickr.photosets.getPhotos` endpoint, and returns one of my own photosets.
 
 To run this code, first make sure you have Node installed. Then:
